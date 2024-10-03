@@ -1,0 +1,33 @@
+.hero-section {
+  background: linear-gradient(135deg, #007bff 0%, #00d4ff 100%);
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+}
+
+.flag-img {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.country-table thead th {
+  text-transform: uppercase;
+}
+
+.country-table tbody tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease;
+}

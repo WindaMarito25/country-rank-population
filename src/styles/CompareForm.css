@@ -1,0 +1,9 @@
+.card {
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.react-select {
+  margin-top: 1rem;
+}

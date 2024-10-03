@@ -1,0 +1,41 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.news-card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  color: #007bff;
+}
+
+.news-card-text {
+  display: -webkit-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  height: 4.5em;
+  color: #6c757d;
+}
+
+.news-card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.news-card:hover {
+  transform: scale(1.05);
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
