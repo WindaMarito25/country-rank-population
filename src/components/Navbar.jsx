@@ -14,7 +14,7 @@ const NavigationBar = () => {
       className="shadow-sm border-bottom border-light sticky-top" // Menambahkan beberapa kelas Bootstrap untuk memberi gaya pada navbar
       style={{ backgroundColor: "#f8f9fa" }} // Memberi gaya tambahan dengan properti inline CSS
     >
-      <Container className="p-0 container-fluid">
+      <Container className="px-3 px-md-5 container-fluid">
         <Navbar.Brand
           as={Link} // Menggunakan Link dari react-router-dom untuk menghubungkan ke halaman home ('/')
           to="/" // Rute halaman home
@@ -41,7 +41,7 @@ const NavigationBar = () => {
             <Nav.Link
               as={Link} // Menggunakan Link untuk navigasi
               to="/" // Rute halaman home
-              className="m-0" // Margin nol untuk styling
+              className="mx-2 mx-lg-3" // Margin nol untuk styling
               style={{ color: "#343a40", fontSize: "1.1rem" }} // Gaya tambahan untuk warna teks dan ukuran font
             >
               Home
@@ -49,7 +49,7 @@ const NavigationBar = () => {
             <Nav.Link
               as={Link}
               to="/compare" // Rute halaman Compare
-              className="m-0"
+              className="mx-2 mx-lg-3"
               style={{ color: "#343a40", fontSize: "1.1rem" }}
             >
               Compare
@@ -57,7 +57,7 @@ const NavigationBar = () => {
             <Nav.Link
               as={Link}
               to="/news" // Rute halaman News
-              className="m-0"
+              className="mx-2 mx-lg-3"
               style={{ color: "#343a40", fontSize: "1.1rem" }}
             >
               News

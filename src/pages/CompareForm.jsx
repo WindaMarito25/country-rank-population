@@ -111,7 +111,10 @@ const CompareForm = () => {
           </Col>
           <Row className=" text-center">
             <Col className="mt-4">
-              <Button type="submit" className="btn btn-primary w-25 btn-lg">
+              <Button
+                type="submit"
+                className="btn btn-primary w-100 w-lg-25 btn-lg"
+              >
                 COMPARE
               </Button>
             </Col>

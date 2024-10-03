@@ -120,7 +120,7 @@ const CompareResult = () => {
         </Row>
 
         {/* Menambahkan tombol untuk kembali ke halaman perbandingan di luar map agar hanya muncul sekali */}
-        <div className="text-center mt-4">
+        <div className="text-center mt-4 w-100 w-lg-25">
           <Button variant="primary" onClick={handleClick} size="lg">
             <FontAwesomeIcon icon={faArrowLeft} className="me-2" />
             Compare Form
