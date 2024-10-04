@@ -10,8 +10,6 @@ import {
   Spinner,
   Button,
 } from "react-bootstrap"; // Mengimpor komponen dari React Bootstrap untuk layout dan styling
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Mengimpor ikon dari FontAwesome
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"; // Mengimpor ikon panah kiri untuk navigasi
 import "../styles/CompareResult.css"; // Mengimpor stylesheet khusus untuk komponen ini
 
 // Membuat komponen fungsional CompareResult
@@ -48,11 +46,6 @@ const CompareResult = () => {
     fetchCountriesData(); // Memanggil fungsi untuk mengambil data negara
   }, [code1, code2]); // Dependensi: fungsi ini akan dipanggil ulang jika code1 atau code2 berubah
 
-  // Fungsi untuk mengarahkan pengguna kembali ke halaman perbandingan
-  const handleClick = () => {
-    navigate("/compare"); // Mengarahkan pengguna kembali ke halaman perbandingan
-  };
-
   // Menampilkan pesan error jika ada
   if (error) {
     return (
@@ -78,7 +71,7 @@ const CompareResult = () => {
     return (
       <Container className="mt-5">
         <div className="text-center">
-          <h1 className="text-black fw-bold">Country Comparison</h1>
+          <h1 className="text-black fw-bold">Result of Country Comparison</h1>
           <p className="fs-5 fw-medium">
             Discover key insights between selected countries
           </p>
@@ -118,14 +111,6 @@ const CompareResult = () => {
             </Col>
           ))}
         </Row>
-
-        {/* Menambahkan tombol untuk kembali ke halaman perbandingan di luar map agar hanya muncul sekali */}
-        <div className="text-center mt-4 w-100 w-lg-25">
-          <Button variant="primary" onClick={handleClick} size="lg">
-            <FontAwesomeIcon icon={faArrowLeft} className="me-2" />
-            Compare Form
-          </Button>
-        </div>
       </Container>
     );
   }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"; // Mengimpor React dan hooks useState, useEffect untuk mengelola state dan efek samping
 import Select from "react-select"; // Mengimpor komponen Select dari react-select untuk dropdown negara
-import { useNavigate } from "react-router-dom"; // Mengimpor hook useNavigate untuk navigasi antar halaman
+import { useNavigate, Outlet } from "react-router-dom"; // Mengimpor hook useNavigate untuk navigasi antar halaman
 import axios from "axios"; // Mengimpor axios untuk melakukan permintaan HTTP
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap"; // Mengimpor komponen UI dari react-bootstrap
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Mengimpor FontAwesomeIcon untuk ikon
@@ -35,13 +35,35 @@ const CompareForm = () => {
     fetchCountries(); // Memanggil fungsi fetchCountries
   }, []); // Efek ini hanya berjalan sekali saat komponen di-mount
 
+  // Menggunakan metode filter untuk membuat daftar negara yang ditampilkan di dropdown Country 1
+  const filteredCountriesForCountry1 = countries.filter(
+    (country) =>
+      // Memastikan bahwa jika tidak ada negara yang dipilih di dropdown Country 2,
+      // maka semua negara dapat ditampilkan di dropdown Country 1
+      !selectedCountry2 ||
+      // Jika ada negara yang dipilih di dropdown Country 2,
+      // maka filter negara yang sama dari dropdown Country 1
+      country.value !== selectedCountry2.value
+  );
+
+  // Menggunakan metode filter untuk membuat daftar negara yang ditampilkan di dropdown Country 2
+  const filteredCountriesForCountry2 = countries.filter(
+    (country) =>
+      // Memastikan bahwa jika tidak ada negara yang dipilih di dropdown Country 1,
+      // maka semua negara dapat ditampilkan di dropdown Country 2
+      !selectedCountry1 ||
+      // Jika ada negara yang dipilih di dropdown Country 1,
+      // maka filter negara yang sama dari dropdown Country 2
+      country.value !== selectedCountry1.value
+  );
+
   // Fungsi untuk menangani submit form
   const handleSubmit = (e) => {
     e.preventDefault(); // Mencegah refresh halaman
     if (selectedCountry1 && selectedCountry2) {
       // Jika kedua negara sudah dipilih
       navigate(
-        `/compare/${selectedCountry1.value}/n/${selectedCountry2.value}` // Navigasi ke halaman perbandingan dengan rute dinamis
+        `./${selectedCountry1.value}/n/${selectedCountry2.value}` // Navigasi ke halaman perbandingan dengan rute dinamis
       );
     }
   };
@@ -79,7 +101,7 @@ const CompareForm = () => {
                   SELECT COUNTRY 1
                 </Card.Title>
                 <Select
-                  options={countries} // Daftar negara untuk dropdown
+                  options={filteredCountriesForCountry1} // Opsi untuk filter dropdown Country1
                   value={selectedCountry1} // Negara yang dipilih
                   onChange={setSelectedCountry1} // Fungsi untuk mengubah negara yang dipilih
                   placeholder="Select a country"
@@ -89,7 +111,7 @@ const CompareForm = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Col xs={1} className="text-center align-self-center">
+          <Col xs={12} md={2} className="text-center align-self-center my-3">
             <h1 className=" text-primary fw-bolder"> VS </h1>{" "}
           </Col>
           <Col xs={12} md={4} className="mb-3">
@@ -99,7 +121,7 @@ const CompareForm = () => {
                   SELECT COUNTRY 2
                 </Card.Title>
                 <Select
-                  options={countries} // Daftar negara untuk dropdown
+                  options={filteredCountriesForCountry2} // Opsi untuk filter dropdown Country1
                   value={selectedCountry2} // Negara yang dipilih
                   onChange={setSelectedCountry2} // Fungsi untuk mengubah negara yang dipilih
                   placeholder="Select a country"
@@ -109,11 +131,11 @@ const CompareForm = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Row className=" text-center">
+          <Row className=" text-center mb-4">
             <Col className="mt-4">
               <Button
                 type="submit"
-                className="btn btn-primary w-100 w-lg-25 btn-lg"
+                className="btn btn-primary w-50 w-sm-50 w-md-100"
               >
                 COMPARE
               </Button>
@@ -121,6 +143,11 @@ const CompareForm = () => {
           </Row>
         </Row>
       </Form>
+      <Container className="border border-1 border-light-subtle rounded-4 mt-5">
+        <div className="comparison-result m-2 ">
+          <Outlet />
+        </div>
+      </Container>
     </Container>
   );
 };

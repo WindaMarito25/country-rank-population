@@ -20,10 +20,12 @@ const AppRouter = createBrowserRouter([
       {
         path: "compare", // Rute untuk halaman perbandingan
         element: <CompareForm />, // Menetapkan komponen CompareForm sebagai elemen untuk rute ini
-      },
-      {
-        path: "/compare/:code1/n/:code2", // Rute untuk hasil perbandingan dengan parameter dinamis
-        element: <CompareResult />, // Menetapkan komponen CompareResult sebagai elemen untuk rute ini
+        children: [
+          {
+            path: ":code1/n/:code2", // Rute untuk hasil perbandingan dengan parameter dinamis
+            element: <CompareResult />, // Menetapkan komponen CompareResult sebagai elemen untuk rute ini
+          },
+        ],
       },
       {
         path: "news", // Rute untuk halaman berita
