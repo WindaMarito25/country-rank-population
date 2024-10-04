@@ -45,7 +45,7 @@ const HomePage = () => {
       </div>
 
       {/* Main Content Section */}
-      <Container className="mt-5 ">
+      <Container className="mt-5">
         <div className="text-center">
           <h1 className="text-black fw-bold">Top Countries by Population</h1>
           <p className="fs-5 fw-medium">
@@ -64,7 +64,7 @@ const HomePage = () => {
             bordered
             hover
             responsive
-            className="country-table mt-4 table-responsive overflow-auto h-50"
+            className="country-table mt-4"
           >
             <thead className="bg-primary text-white">
               <tr>
