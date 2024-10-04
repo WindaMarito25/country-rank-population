@@ -18,7 +18,7 @@ const News = () => {
         const response = await axios.get(
           `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=Peace&api-key=${API_KEY}`
         );
-        const newsData = response.data.response.docs.slice(0, 12); // Mengambil 12 artikel pertama
+        const newsData = response.data.response.docs.slice(0, 14); // Mengambil 12 artikel pertama
         setArticles(newsData); // Menyimpan data artikel ke state
       } catch (error) {
         console.error("Error fetching news:", error); // Mencetak error ke konsol

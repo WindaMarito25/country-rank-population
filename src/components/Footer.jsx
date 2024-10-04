@@ -10,7 +10,7 @@ function Footer() {
       <Container>
         <Row>
           <Col xs={12} md={6} className="text-start text-md-start mb-3 mb-md-0">
-            <h5>About This Project</h5>
+            <h5>Country Rank</h5>
             <p>
               Discover population data and rankings across countries worldwide.
               Stay updated with accurate and comprehensive demographic insights.

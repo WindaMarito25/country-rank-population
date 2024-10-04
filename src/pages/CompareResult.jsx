@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from "react"; // Mengimpor React dan hook yang diperlukan untuk state dan efek samping
-import { useParams, useNavigate } from "react-router-dom"; // Mengimpor hook untuk mengambil parameter dari URL dan navigasi antar halaman
+import { useParams } from "react-router-dom"; // Mengimpor hook untuk mengambil parameter dari URL dan navigasi antar halaman
 import axios from "axios"; // Mengimpor axios untuk melakukan permintaan HTTP ke API
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  Alert,
-  Spinner,
-  Button,
-} from "react-bootstrap"; // Mengimpor komponen dari React Bootstrap untuk layout dan styling
+import { Container, Row, Col, Card, Alert, Spinner } from "react-bootstrap"; // Mengimpor komponen dari React Bootstrap untuk layout dan styling
 import "../styles/CompareResult.css"; // Mengimpor stylesheet khusus untuk komponen ini
 
 // Membuat komponen fungsional CompareResult
@@ -21,7 +13,6 @@ const CompareResult = () => {
   const [countriesData, setCountriesData] = useState(null); // State untuk menyimpan data negara
   const [error, setError] = useState(null); // State untuk menyimpan pesan error jika terjadi kesalahan
   const [loading, setLoading] = useState(true); // State untuk menunjukkan status loading data
-  const navigate = useNavigate(); // Hook untuk navigasi ke halaman lain dalam aplikasi
 
   // Effect yang dijalankan saat komponen dimuat atau saat parameter URL berubah
   useEffect(() => {
