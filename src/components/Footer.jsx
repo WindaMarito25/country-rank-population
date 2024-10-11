@@ -20,13 +20,13 @@ function Footer() {
             <h5>Connect With Us</h5>
             <p className="d-flex justify-content-center justify-content-md-end gap-3">
               <a
-                href="mailto:info@populationrank.com"
+                href="mailto:windamarito8@gmail.com"
                 className="text-center text-dark text-md-end"
               >
                 <FontAwesomeIcon icon={faEnvelope} size="2x" />
               </a>
               <a
-                href="https://www.linkedin.com/in/your-profile"
+                href="https://www.linkedin.com/in/winda-marito"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-dark"
@@ -34,7 +34,7 @@ function Footer() {
                 <FontAwesomeIcon icon={faLinkedin} size="2x" />
               </a>
               <a
-                href="https://github.com/your-repo"
+                href="https://github.com/WindaMarito25/country-rank-population.git"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-dark"
